@@ -10,7 +10,6 @@ orchestrated by **Airflow**.
 
 ## Architecture
 
-
 ```mermaid
 flowchart LR
   G[generate_data.py] --> PG[(Postgres)]
@@ -30,7 +29,6 @@ flowchart LR
   CAT --> AT[Athena sim / DuckDB]
   SI -. demo .-> IC[(Iceberg table)]
 
-
 ## Tech stack
 
 | Layer | Tools |
@@ -46,7 +44,6 @@ flowchart LR
 
 ## Repository layout
 
-```
 .
 ├── infrastructure/   docker-compose.yml, Dockerfiles, Debezium connector, .env.example
 ├── ingestion/        generate_data.py (synthetic orders), Init.SQL (schema + seed data)
@@ -57,18 +54,7 @@ flowchart LR
 ├── analytics/        saved SQL queries + DuckDB query script
 ├── aws/              real AWS Glue Crawler / Athena scripts
 └── .github/          CI workflow
-```
 
-## Quick start
-
-Requirements: Docker Desktop (8 GB RAM recommended).
-
-```bash
-cd infrastructure
-cp .env.example .env            # Windows: copy .env.example .env  -> then edit the passwords
-docker compose up -d --build    # first build takes a while (Java, Spark, Airflow images)
-docker compose ps               # one-shot services (s3-setup, debezium-setup, airflow-init) exit 0
-```
 
 1. Open Airflow at http://localhost:8080 (user/password from your `.env`) and trigger `ecom_lakehouse_automated_pipeline`.
 2. Check the CDC connector: `curl localhost:8083/connectors/ecom-postgres-connector/status`

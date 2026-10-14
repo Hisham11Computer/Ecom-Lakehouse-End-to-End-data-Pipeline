@@ -1,0 +1,10 @@
+.env
+venv/
+.venv/
+__pycache__/
+*.pyc
+.idea/
+.vscode/
+infrastructure/checkpoints/
+catalog/catalog.json
+*.pyc

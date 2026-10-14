@@ -1,7 +1,5 @@
 # E-commerce CDC Lakehouse Platform
 
-[![CI](https://github.com/<your-username>/ecom-lakehouse-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-username>/ecom-lakehouse-platform/actions)
-
 A fully containerized, end-to-end data platform: **change data capture** from Postgres into a
 **Bronze / Silver / Gold lakehouse** on S3 (LocalStack), with **Delta Lake** upserts, a
 **Great Expectations** quality gate, **Apache Iceberg** and **Glue / Athena** simulations,
@@ -11,6 +9,7 @@ orchestrated by **Airflow**.
 > (Glue Crawler, Athena) are **simulated locally**, and real-AWS scripts are provided in [`aws/`](aws/).
 
 ## Architecture
+
 
 ```mermaid
 flowchart LR
@@ -30,7 +29,7 @@ flowchart LR
   CR --> CAT[(Data Catalog<br/>catalog.json)]
   CAT --> AT[Athena sim / DuckDB]
   SI -. demo .-> IC[(Iceberg table)]
-```
+
 
 ## Tech stack
 
@@ -139,18 +138,23 @@ docker compose exec airflow-scheduler python /opt/airflow/processing/iceberg_dem
 
 ## Screenshots & Pipeline Validation
 
-### 1. Airflow Orchestration & DAG Execution
-![Airflow DAG Overview](images/airflow_dag_overview.png)
-![Airflow Tasks Execution Success](images/airflow_tasks_success.png)
+### 1. Airflow Orchestration & Pipeline Execution
+<p align="center">
+  <img src="images/airflow_dag_overview.png" width="48%" alt="Airflow DAG Overview">
+  <img src="images/airflow_tasks_success.png" width="48%" alt="Airflow Tasks Success">
+</p>
 
-### 2. Simulated Data Catalog & Glue Crawler
-![Glue Crawler Discovery](images/crawler_catalog_discovery.png)
+### 2. Data Catalog Discovery (Glue Crawler Simulation)
+<p align="center">
+  <img src="images/crawler_catalog_discovery.png" width="85%" alt="Crawler Discovery">
+</p>
 
-### 3. Athena Simulation Queries & Reports
-| Daily Revenue Report | Top Spending Customers |
-|---|---|
-| ![Daily Revenue](images/athena_daily_revenue.png) | ![Top Customers](images/athena_top_customers_table.png) |
-
-| Revenue by Product | CDC Event Mix |
-|---|---|
-| ![Revenue by Product](images/athena_revenue_by_product.png) | ![CDC Mix](images/athena_cdc_events_mix.png) |
+### 3. Athena Analytics Reports & Queries
+<p align="center">
+  <img src="images/athena_daily_revenue.png" width="48%" alt="Daily Revenue">
+  <img src="images/athena_top_customers.png" width="48%" alt="Top Customers">
+</p>
+<p align="center">
+  <img src="images/athena_revenue_by_product.png" width="48%" alt="Revenue by Product">
+  <img src="images/athena_cdc_events_mix.png" width="48%" alt="CDC Events Mix">
+</p>

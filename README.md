@@ -140,21 +140,21 @@ docker compose exec airflow-scheduler python /opt/airflow/processing/iceberg_dem
 
 ### 1. Airflow Orchestration & Pipeline Execution
 <p align="center">
-  <img src="images/airflow_dag_overview" width="48%" alt="Airflow DAG Overview">
-  <img src="images/airflow_tasks_success" width="48%" alt="Airflow Tasks Success">
+  <img src="images/airflow_dag_overview.png" width="48%" alt="Airflow DAG Overview">
+  <img src="images/airflow_tasks_success.png" width="48%" alt="Airflow Tasks Success">
 </p>
 
 ### 2. Data Catalog Discovery (Glue Crawler Simulation)
 <p align="center">
-  <img src="images/crawler_catalog_discovery" width="85%" alt="Crawler Discovery">
+  <img src="images/crawler_catalog_discovery.png" width="85%" alt="Crawler Discovery">
 </p>
 
 ### 3. Athena Analytics Reports & Queries
 <p align="center">
-  <img src="images/athena_daily_revenue" width="48%" alt="Daily Revenue">
-  <img src="images/athena_top_customers" width="48%" alt="Top Customers">
+  <img src="images/athena_daily_revenue.png" width="48%" alt="Daily Revenue">
+  <img src="images/athena_top_customers.png" width="48%" alt="Top Customers">
 </p>
 <p align="center">
-  <img src="images/athena_revenue_by_product" width="48%" alt="Revenue by Product">
-  <img src="images/athena_cdc_events_mix" width="48%" alt="CDC Events Mix">
+  <img src="images/athena_revenue_by_product.png" width="48%" alt="Revenue by Product">
+  <img src="images/athena_cdc_events_mix.png" width="48%" alt="CDC Events Mix">
 </p>

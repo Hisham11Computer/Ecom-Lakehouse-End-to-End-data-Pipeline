@@ -1,5 +1,7 @@
 # E-commerce CDC Lakehouse Platform
 
+[![CI](https://github.com/<Hisham11Computer>/ecom-lakehouse-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-username>/ecom-lakehouse-platform/actions)
+
 
 A fully containerized, end-to-end data platform: **change data capture** from Postgres into a
 **Bronze / Silver / Gold lakehouse** on S3 (LocalStack), with **Delta Lake** upserts, a
